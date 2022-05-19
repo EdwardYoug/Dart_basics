@@ -5,8 +5,6 @@ import 'dart:io';
 import 'package:module2/interface/ServiceInterface.dart';
 
 class MapWordCount implements ServiceInterface{
-  @override
-
   Map<String, int> ?getMapWordsCount(List<String> words){
     Map<String, int> result = {};
     for(String word in words) {
@@ -19,6 +17,7 @@ class MapWordCount implements ServiceInterface{
     return result;
   }
 
+  @override
   void execute() {
     print('Введите слова через пробел');
     String ?words = stdin.readLineSync();

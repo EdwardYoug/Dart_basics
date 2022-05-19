@@ -11,9 +11,9 @@ class Point implements ServiceInterface {
   double _z = 26.7415;
 
   Point(double x,y,z){
-    this._x = x;
-    this._y = y;
-    this._z = z;
+    _x = x;
+    _y = y;
+    _z = z;
   }
 
   factory Point.zero() {
@@ -78,10 +78,10 @@ class Point implements ServiceInterface {
     try {
       switch (int.parse(stdin.readLineSync()!)) {
         case 1:
-          this.pointDistanse();
+          pointDistanse();
           break;
         case 2:
-          this.squareTriangle();
+          squareTriangle();
           break;
       }
     } catch (e) {

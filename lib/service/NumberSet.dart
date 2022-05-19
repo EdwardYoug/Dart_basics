@@ -1,13 +1,10 @@
 // ignore_for_file: file_names
 
-import 'dart:ffi';
 import 'dart:io';
 
 import 'package:module2/interface/ServiceInterface.dart';
 
 class NumberSet implements ServiceInterface {
-  @override
-
   final Map<String, num> _map = {
     'one':1,
     'two':2,
@@ -24,14 +21,15 @@ class NumberSet implements ServiceInterface {
     List<String> list = List.empty();
     Set<num> result = {};
     list = str.split(' ');
-    list.forEach((element) {
+    for (var element in list) {
       if (_map.containsKey(element)){
         result.add(_map[element]!);
       }
-    });
+    }
     return result;
   }
 
+  @override
   void execute() {
     print('Введите числа в любой последовательности с повторениями на английском языке');
     String ?numbers = stdin.readLineSync();
